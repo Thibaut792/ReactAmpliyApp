@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3Upload",
+  "policyUUID": "94620af4",
+  "bucketName": "thibaut-aws-learning",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
