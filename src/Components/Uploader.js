@@ -1,10 +1,12 @@
 import React from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
 import Dropzone from 'react-dropzone-uploader';
+import axios from 'axios';
+
 
 const Uploader = () => {
 
-    const axios = require('axios');
+    //const axios = require("axios").default;
     const API_ENDPOINT = "https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url";
     const handleChangeStatus = ({ meta, remove }, status) => {
       console.log(status, meta);
@@ -14,11 +16,12 @@ const Uploader = () => {
         const f = files[0];
         console.log(f);
 
-        const response = await axios({
-            method: 'GET',
-            url: API_ENDPOINT
-          });
-
+        const response = await axios.get('https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url');
+          
+          // const response = await axios({
+          //   method: 'GET',
+          //   url: API_ENDPOINT
+          // })
         console.log("Response", response);
 
         const result = await fetch(response.data.uploadURL, {

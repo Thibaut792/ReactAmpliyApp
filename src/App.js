@@ -8,7 +8,8 @@ import Uploader from './Components/Uploader';
 
 Amplify.configure(awsExports);
 
-
+// const cors = require('cors');
+// App.use(cors({ origin: true }));
 // export default function App() {
 //   return (
 //     <Authenticator>
@@ -24,6 +25,7 @@ Amplify.configure(awsExports);
 // }
 
 function App(){
+
   return(
     <div className="App">
       <meta charSet="utf-8"/>
