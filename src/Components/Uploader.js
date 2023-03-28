@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Uploader = () => {
 
-    // const axios = require("axios").default;
+    //const axios = require("axios").default;
     const handleChangeStatus = ({ meta, remove }, status) => {
       console.log(status, meta);
     };
@@ -15,13 +15,7 @@ const Uploader = () => {
         const f = files[0];
         console.log(f);
 
-      // let reader = new FileReader()
-      // reader.onload = (f) => {
-      //   console.log('type: ', f.target.result.includes('data:file/pdf'))
-      //   if (!f.target.result.includes('date:file/pdf')){
-      //     console.log('test')
-      //   }
-      // }
+
         const response = await axios.get('https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url');
         
         console.log("Response", response);
@@ -31,7 +25,7 @@ const Uploader = () => {
           headers:{
             "Content-Type": "files/pdf"
           },
-          body: f[files]
+          body: f["file"]
         })
         
         console.log('Result: ', result)
