@@ -2,8 +2,6 @@ import React from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
 import Dropzone from 'react-dropzone-uploader';
 import axios from 'axios';
-import { checkMaxSize } from '@aws-amplify/ui';
-
 
 const Uploader = () => {
 
@@ -27,9 +25,7 @@ const Uploader = () => {
           },
           body: f["file"]
         })
-        
-        console.log('Result: ', result)
-        
+        console.log('Result: ', result)        
     };
    
 
