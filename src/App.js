@@ -1,7 +1,3 @@
-import { Amplify } from 'aws-amplify';
-import React , {useState} from 'react';
-import { uploadFile } from 'react-s3';
-import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './Components/CognitoConfiguration';
 import Uploader from './Components/Uploader';
@@ -34,3 +30,4 @@ function App(){
 }
 
 export default App;
+
