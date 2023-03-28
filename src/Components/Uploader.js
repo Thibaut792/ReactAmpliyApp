@@ -2,19 +2,19 @@ import React from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
 import Dropzone from 'react-dropzone-uploader';
 import axios from 'axios';
+import { checkMaxSize } from '@aws-amplify/ui';
 
 
 const Uploader = () => {
 
     //const axios = require("axios").default;
-    const handleChangeStatus = ({ meta, remove }, status) => {
+    const handleChangeStatus = ({ meta, files  }, status) => {
       console.log(status, meta);
     };
     
     const handleSubmit = async (files) => {
         const f = files[0];
         console.log(f);
-
 
         const response = await axios.get('https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url');
         
@@ -31,22 +31,28 @@ const Uploader = () => {
         console.log('Result: ', result)
         
     };
-    
-  
+   
+
     return (
         <Dropzone
           onChangeStatus={handleChangeStatus}
           onSubmit={handleSubmit}
           maxFiles={3}
+          maxSizeBytes={26214400}
+          //LayoutComponent={Layout}
           multiple={false}
-          canCancel={false}
-          inputContent="Deposer votre document"
+          canCancel={true}
+          accept="image/*"
+          inputContent={(files, extra) => (extra.reject ? 'Seul les images sont autorisées' : 'Déposer vos documents' )}  
           styles={{
             dropzone: { width: 400, height: 200 },
             dropzoneActive: { borderColor: 'green' },
+            dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },
+            inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {}),
           }}
         />
     )
+   
   }
   
   <Uploader />
