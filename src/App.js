@@ -1,5 +1,5 @@
 import '@aws-amplify/ui-react/styles.css';
-import awsExports from './Components/CognitoConfiguration';
+// import awsExports from './Components/CognitoConfiguration';
 import Uploader from './Components/Uploader';
 
 // Amplify.configure(awsExports);

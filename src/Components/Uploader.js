@@ -14,8 +14,7 @@ const Uploader = () => {
         const f = files[0];
         console.log(f);
 
-        const response = await axios.get('https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url');
-        
+        const response = await axios.get('https://3s5er1ux98.execute-api.eu-west-3.amazonaws.com/thibaut_test-presigned-url')
         console.log("Response", response);
        
         const result = await fetch(response.data.uploadURL, {
@@ -27,15 +26,24 @@ const Uploader = () => {
         })
         console.log('Result: ', result)        
     };
-   
-
-    return (
+    // const Layout = ({ input, previews, submitButton, dropzoneProps, files, extra: { maxFiles } }) => {
+    //   return (
+    //     <div>
+    //       {previews}
+    //       <div {...dropzoneProps}>
+    //         {files.length < maxFiles && input}
+    //       </div>​
+    //       {files.length > 0 && submitButton}
+    //     </div>
+    //   )
+    // }
+    return  (
         <Dropzone
           onChangeStatus={handleChangeStatus}
           onSubmit={handleSubmit}
-          maxFiles={3}
+          maxFiles={2}
           maxSizeBytes={26214400}
-          //LayoutComponent={Layout}
+          // LayoutComponent={Layout}
           multiple={false}
           canCancel={true}
           accept="image/*"
