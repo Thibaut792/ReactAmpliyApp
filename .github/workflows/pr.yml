@@ -1,0 +1,17 @@
+name: PR Closed Workflow
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  pr_closed_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+      
+    - name: Imprimer les détails de la pull request
+      run: |
+        echo "La pull request ${GITHUB_REPOSITORY}#${{ github.event.pull_request.number }} a été fermée."
