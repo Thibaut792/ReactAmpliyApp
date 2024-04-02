@@ -18,7 +18,8 @@ jobs:
         if [ $AGE -ge 18 ]; then
           RESULT="Vous êtes majeur"
         else
-          RESULT="Vous êtes mineur" 
+          RESULT="Vous êtes mineur"
+        fi
       env:
         AGE: 18
 
