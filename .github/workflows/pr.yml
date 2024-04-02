@@ -2,7 +2,7 @@ name: PR Closed Workflow
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed]
+    types: [closed]
 
 jobs:
   pr_closed_job:
