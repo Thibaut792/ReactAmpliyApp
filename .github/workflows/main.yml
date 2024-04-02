@@ -14,17 +14,17 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Vérifier l'âge
+      id: age_check
       run: |
         if [ $AGE -ge 18 ]; then
-          export RESULT="Vous êtes majeur"
+          echo "::set-output name=result::Vous êtes majeur"
         else
-          export RESULT="Vous êtes mineur"
+          echo "::set-output name=result::Vous êtes mineur"
         fi
       env:
         AGE: 18
 
     - name: Hello Thibaut
-      run: echo "Hello, $NOM , tu es $RESULT"
+      run: echo "Hello, $NOM , tu es ${{ steps.age_check.outputs.result }}"
       env:
         NOM: Thibaut
-        RESULT: ${{ env.RESULT }}
