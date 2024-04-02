@@ -26,4 +26,5 @@ jobs:
 
       - name: Hello Thibaut
         run: echo "Hello, ${{ env.NAME }} , tu es ${{ steps.age_check.outputs.result }}"
-        env: ${{ secrets.NAME }}
+        env:
+          NAME: ${{ secrets.NAME }}
