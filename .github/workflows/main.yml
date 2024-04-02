@@ -17,9 +17,9 @@ jobs:
         id: age_check
         run: |
           if [ $AGE -ge 18 ]; then
-            echo "::set-output name=result::Vous êtes majeur"
+            echo "::set-output name=result:: majeur"
           else
-            echo "::set-output name=result::Vous êtes mineur"
+            echo "::set-output name=result:: mineur"
           fi
         env:
           AGE: 21
