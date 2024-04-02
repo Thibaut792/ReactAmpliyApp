@@ -13,11 +13,6 @@ jobs:
     - name: Checkout du code
       uses: actions/checkout@v2
 
-    - name: Hello World
-      run: echo "Hello, ${{ env.NAME }}!"
-      env:
-        NAME: '${{ var.NAME }}'
-
     - name: Hello Thibaut
       run: echo "Hello, $NOM !"
       env:
