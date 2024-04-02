@@ -13,7 +13,18 @@ jobs:
     - name: Checkout du code
       uses: actions/checkout@v2
 
+    - name: Vérifier l'âge
+      run: |
+        if [ $AGE -ge 18 ]; then
+          RESULT="Vous êtes majeur"
+        else
+          RESULT="Vous êtes mineur"
+        fi
+        echo "::set-env name=RESULT::$RESULT"
+      env:
+        AGE: 18
+
     - name: Hello Thibaut
-      run: echo "Hello, $NOM !"
+      run: echo "Hello, $NOM , tu es $RESULT"
       env:
         NOM: Thibaut
