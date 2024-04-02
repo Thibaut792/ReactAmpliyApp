@@ -22,7 +22,7 @@ jobs:
           echo "::set-output name=result::Vous êtes mineur"
         fi
       env:
-        AGE: 18
+        AGE: 17
 
     - name: Hello Thibaut
       run: echo "Hello, $NOM , tu es ${{ steps.age_check.outputs.result }}"
