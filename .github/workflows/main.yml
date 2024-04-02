@@ -18,9 +18,7 @@ jobs:
         if [ $AGE -ge 18 ]; then
           RESULT="Vous êtes majeur"
         else
-          RESULT="Vous êtes mineur"
-        fi
-        echo "::set-env name=RESULT::$RESULT"
+          RESULT="Vous êtes mineur" 
       env:
         AGE: 18
 
