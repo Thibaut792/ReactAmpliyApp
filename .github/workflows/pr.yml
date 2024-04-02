@@ -1,17 +1,21 @@
-name: PR Closed Workflow
+name: Close Pull Request
 
+# only trigger on pull request closed events
 on:
   pull_request:
-    types: [closed]
+    types: [ closed ]
 
 jobs:
-  pr_closed_job:
+  merge_job:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout du code
-        uses: actions/checkout@v2
+    - run: |
+        echo PR #${{ github.event.number }} has been merged
 
-      - name: Imprimer les détails de la pull request
-        run: |
-          echo "La pull request ${GITHUB_REPOSITORY}#${{ github.event.pull_request.number }} a été fermée."
+  close_job:
+    if: github.event.pull_request.merged == false
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo PR #${{ github.event.number }} has been closed without being merged
