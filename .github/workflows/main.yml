@@ -16,7 +16,7 @@ jobs:
     - name: Hello World
       run: echo "Hello, ${{ env.NAME }}!"
       env:
-        NAME: '${{ secrets.NAME }}'
+        NAME: '${{ var.NAME }}'
 
     - name: Hello Thibaut
       run: echo "Hello, $NOM !"
