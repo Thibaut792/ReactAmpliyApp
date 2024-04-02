@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout du code
-      uses: actions/checkout@v2
+      - name: Checkout du code
+        uses: actions/checkout@v2
 
-    - name: Vérifier l'âge
-      id: age_check
-      run: |
-        if [ $AGE -ge 18 ]; then
-          echo "::set-output name=result::Vous êtes majeur"
-        else
-          echo "::set-output name=result::Vous êtes mineur"
-        fi
-      env:
-        AGE: 21
+      - name: Vérifier l'âge
+        id: age_check
+        run: |
+          if [ $AGE -ge 18 ]; then
+            echo "::set-output name=result::Vous êtes majeur"
+          else
+            echo "::set-output name=result::Vous êtes mineur"
+          fi
+        env:
+          AGE: 21
 
-    - name: Hello Thibaut
-      run: echo "Hello, $NOM , tu es ${{ steps.age_check.outputs.result }}"
-      env:
-        NOM: Thibaut
+      - name: Hello Thibaut
+        run: echo "Hello, $NOM , tu es ${{ steps.age_check.outputs.result }}"
+        env:
+          NOM: Thibaut
