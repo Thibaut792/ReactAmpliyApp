@@ -16,4 +16,4 @@ jobs:
     - name: Hello World
       run: echo "Hello, ${{ env.NAME }}!"
       env:
-        NAME: ${{ secrets.NAME }}
+        NAME: ${{ variables.NAME }}
