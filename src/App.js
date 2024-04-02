@@ -23,7 +23,7 @@ function App(){
   return(
     <div className="App">
       <meta charSet="utf-8"/>
-      <h1>Upload Document to bucket S3</h1>
+      <h1>Upload Document to aws bucket S3</h1>
       <Uploader />
     </div>
   )
