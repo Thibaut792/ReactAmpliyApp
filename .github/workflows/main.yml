@@ -16,14 +16,10 @@ jobs:
     - name: Vérifier l'âge
       run: |
         if [ $AGE -ge 18 ]; then
-          RESULT="Vous êtes majeur"
+          RESULT="Hello, $NOM , tu es majeur !!"
         else
-          RESULT="Vous êtes mineur"
+          RESULT="Hello, $NOM , tu es mineur !!"
         fi
       env:
         AGE: 18
-
-    - name: Hello Thibaut
-      run: echo "Hello, $NOM , tu es $RESULT"
-      env:
         NOM: Thibaut
