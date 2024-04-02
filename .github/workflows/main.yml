@@ -18,7 +18,7 @@ jobs:
       env:
         NAME: '${{ secrets.NAME }}'
 
-    - name: Hello World
+    - name: Hello Thibaut
       run: echo "Hello, $NOM !"
       env:
         NOM: Thibaut
