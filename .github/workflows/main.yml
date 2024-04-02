@@ -19,6 +19,6 @@ jobs:
         NAME: '${{ secrets.NAME }}'
 
     - name: Hello World
-      run: echo "Hello, $NAME !"
+      run: echo "Hello, $NOM !"
       env:
-        NAME: Thibaut
+        NOM: Thibaut
